@@ -21,11 +21,6 @@ endif
 call plug#begin(s:bundle)
 " }}}
 
-" Appearance
-" ====================================================================
-" Plug 'nathanaelkane/vim-indent-guides'
-
-
 " Completion
 " ====================================================================
 function! BuildYCM(info)
@@ -44,6 +39,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 " ====================================================================
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
@@ -65,6 +61,11 @@ Plug 'tmhedberg/SimpylFold'
 " ====================================================================
 Plug 'tpope/vim-fugitive'
 
+" Appearance
+" ====================================================================
+" Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ryanoasis/vim-devicons'
+
 call plug#end() " Plugins initialization finished {{{
 " }}}
 
@@ -77,6 +78,8 @@ set noswapfile     " disable creating of *.swp files
 set hidden         " hide buffers instead of closing
 set lazyredraw     " speed up on large files
 set mouse=         " disable mouse
+set encoding=utf8  " use utf8
+set guifont=DroidSansMono_Nerd_Font:h11
 
 set scrolloff=999       " always keep cursor at the middle of screen
 set virtualedit=onemore " allow the cursor to move just past the end of the line
