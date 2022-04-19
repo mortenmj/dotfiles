@@ -1,0 +1,110 @@
+k9s:
+  refreshRate: 2
+  maxConnRetry: 5
+  enableMouse: false
+  headless: false
+  logoless: false
+  crumbsless: false
+  readOnly: false
+  noIcons: false
+  logger:
+    tail: 100
+    buffer: 5000
+    sinceSeconds: 60
+    fullScreenLogs: false
+    textWrap: false
+    showTime: false
+  currentContext: cognitedata-development
+  currentCluster: gke_cognitedata-development_europe-west1_cognitedata-development
+  clusters:
+    az-eastus-1:
+      namespace:
+        active: kube-system
+        favorites:
+        - kube-system
+        - default
+      view:
+        active: po
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.31
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+      portForwardAddress: localhost
+    gke_cognite-jenkins-ci_europe-west1_jenkins-ci:
+      namespace:
+        active: all
+        favorites:
+        - all
+        - default
+      view:
+        active: service
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.31
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+      portForwardAddress: localhost
+    gke_cognitedata-development_europe-west1_cognitedata-development:
+      namespace:
+        active: all
+        favorites:
+        - mohsin
+        - all
+        - internal-services
+        - buildbuddy
+        - monitoring
+        - grafana
+        - gatekeeper
+        - hodor
+        - backstage
+      view:
+        active: deploy
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.31
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+      portForwardAddress: localhost
+    gke_cognitedata_europe-west1_infra:
+      namespace:
+        active: baker
+        favorites:
+        - baker
+        - default
+      view:
+        active: pod
+      featureGates:
+        nodeShell: false
+      shellPod:
+        image: busybox:1.31
+        command: []
+        args: []
+        namespace: default
+        limits:
+          cpu: 100m
+          memory: 100Mi
+      portForwardAddress: localhost
+  thresholds:
+    cpu:
+      critical: 90
+      warn: 70
+    memory:
+      critical: 90
+      warn: 70
+  screenDumpDir: /tmp/k9s-screens-mortenmj

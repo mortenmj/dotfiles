@@ -1,0 +1,7 @@
+[user]
+	email = morten.mjelva@gmail.com
+	name = Morten Mjelva
+[core]
+	editor = vim
+[url "git@github.com:"]
+	insteadOf = https://github.com/
