@@ -102,4 +102,4 @@ source $ZSH/oh-my-zsh.sh
 
 alias testvm="gcloud compute ssh --zone \"europe-west1-b\" \"morten-test-vm\"  --tunnel-through-iap --project \"cognitedata-development\""
 
-alias config='/usr/bin/git --git-dir=/home/mortenmj/.cfg/ --work-tree=/home/mortenmj'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
