@@ -70,7 +70,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(bazel colorize fzf gcloud git golang kubectl kubectx lpass sudo zsh-interactive-cd)
+plugins=(bazel colorize fzf git golang kubectl kubectx sudo zsh-interactive-cd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -100,6 +100,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias testvm="gcloud compute ssh --zone \"europe-west1-b\" \"morten-test-vm\"  --tunnel-through-iap --project \"cognitedata-development\""
+export NVM_DIR="$HOME/.nvm"
+export PYTHONDONTWRITEBYTECODE=1
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+RPS1='$(kubectx_prompt_info)'
+
+UNLEASH_PAT=user:7f70a4ef75fb57619a0ab0f98d1eb5b463eb68183db18c237866159f
+CR_PAT=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
