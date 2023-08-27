@@ -117,6 +117,4 @@ if ! shopt -oq posix; then
 fi
 
 export GITHUB_APP_CREDENTIALS_FILE=~/dummy.yaml
-export GOPRIVATE=github.com/cognitedata/baker
-export GOOGLE_APPLICATION_CREDENTIALS=/home/mortenmj/service-account-file.json
 alias config='/usr/bin/git --git-dir=/home/mortenmj/.cfg/ --work-tree=/home/mortenmj'
